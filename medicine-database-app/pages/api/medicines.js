@@ -7,7 +7,7 @@ export default async function handler(req, res) {
   if (req.method === 'GET') {
     const medicines = await Medicine.find({});
     res.status(200).json(medicines);
-  } else if (req.method === 'POST') {
+  } else if (req.method === 'PRE') {
     const { name, description } = req.body;
     const newMedicine = new Medicine({ name, description });
     await newMedicine.save();
